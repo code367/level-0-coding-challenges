@@ -1,15 +1,13 @@
 function printVowels(str){
-
   const vowels = "aeiou";
-
-  return str.toLowerCase().split('')
-  .reduce((list,e)=>{
-    if((vowels.indexOf(e)+1)&&!list.includes(e)){
-      list.push(e);
+  let  results = [];
+  for(let i = 0; i < str.length; i++){
+    let chr = str.charAt(i).toLowerCase();
+    if(vowels.includes(chr) && !results.includes(chr)){
+      if(results.push(chr) == vowels.length){
+        break;
+      }
     }
-    return list;
-  },[])
-  .join(', ');
-
+  }
+  console.log("Vowels:",results.join(', '));
 }
-

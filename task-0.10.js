@@ -1,7 +1,19 @@
-function printCommonCharacters(str1, str2){
-  let commonLetters = str1.split('')
-  .filter(e=>(str2.indexOf(e.toLowerCase())+1)||(str2.indexOf(e.toUpperCase())+1))
-  .reduce((list,e)=>{if(!list.includes(e)){list.push(e);}return list;},[])
-  .join(", ");
-  console.log("Common letters:",commonLetters);
+function printCommonCharacters(firstString, secondString){
+  let result = [];
+  // firstString should hold the longest string, swap if necessary.
+  if(firstString.length < secondString.length){
+    let tmp = firstString;
+    firstString = secondString;
+    secondString = tmp;
+  }
+  for(let i = 0; i < firstString.length; i++){
+    let chr = firstString.charAt(i).toLowerCase();
+    if(!result.includes(chr) && (secondString.includes(chr) || secondString.includes(chr.toUpperCase()))){
+      result.push(chr);
+    } 
+  }
+  console.log("Common letters:",result.join(', '));
 }
+
+
+
