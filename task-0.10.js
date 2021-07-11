@@ -1,4 +1,4 @@
-function printCommonCharacters(firstString, secondString){
+function printCommonLetters(firstString, secondString){
   let result = [];
   // firstString should hold the longest string, swap if necessary.
   if(firstString.length < secondString.length){
@@ -14,6 +14,3 @@ function printCommonCharacters(firstString, secondString){
   }
   console.log("Common letters:",result.join(', '));
 }
-
-
-
