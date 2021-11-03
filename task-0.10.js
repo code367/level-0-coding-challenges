@@ -1,16 +1,20 @@
-function printCommonLetters(firstString, secondString){
+function printCommonLetters(firstString, secondString) {
   let result = [];
-  // firstString should hold the longest string, swap if necessary.
-  if(firstString.length < secondString.length){
+  if (firstString.length < secondString.length) {
     let tmp = firstString;
     firstString = secondString;
     secondString = tmp;
   }
-  for(let i = 0; i < firstString.length; i++){
+  for (let i = 0; i < firstString.length; i++) {
     let chr = firstString.charAt(i).toLowerCase();
-    if(!result.includes(chr) && (secondString.includes(chr) || secondString.includes(chr.toUpperCase()))){
+    if (
+      !result.includes(chr) &&
+      (secondString.includes(chr) || secondString.includes(chr.toUpperCase()))
+    ) {
       result.push(chr);
-    } 
+    }
   }
-  console.log("Common letters:",result.join(', '));
+  console.log("Common letters:", result.join(", "));
 }
+
+printCommonLetters("Hello", "World");
